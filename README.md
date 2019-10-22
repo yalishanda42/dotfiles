@@ -19,8 +19,8 @@ Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
 - For root: `sudo chsh -s /bin/zsh`
 
 4. Use the repo:
-`git clone https://github.com/allexks/dotfiles`
-`cp dotfiles/.* ~`
-`sudo ln -s ~/.zshrc /root/.zshrc`
-
-
+```bash
+git clone https://github.com/allexks/dotfiles
+cp dotfiles/.* ~
+sudo ln -s ~/.zshrc ~root/.zshrc  # only if you wanna change root shell as well
+```
