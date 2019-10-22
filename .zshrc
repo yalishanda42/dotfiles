@@ -82,6 +82,12 @@ plugins=(
 	zsh-autosuggestions
 )
 
+if (( $(id -u) == 0 ))
+then
+	# root run fix
+	ZSH_DISABLE_COMPFIX="true"
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -116,44 +122,65 @@ alias q="exit"
 alias py="python3"
 alias py2="python"
 alias gri="git rebase --interactive"
-alias gg="gloga"
+alias gg="gloga" # git log --all --graph --oneline --color
+alias gpl="git pull"
+
 
 # ASCII art startup
-if [[ $(tput cols) -lt 107 ]]
+if (( $(id -u) == 0 ))
 then
-	echo "              __ __       __                   __       ";
-	echo " .--.--.---.-|  |__.-----|  |--.---.-.-----.--|  .---.-.";
-	echo " |  |  |  _  |  |  |__ --|     |  _  |     |  _  |  _  |";
-	echo " |___  |___._|__|__|_____|__|__|___._|__|__|_____|___._|";
-	echo " |_____|                                                ";
-	echo "                                                        ";
-	echo "                                                        ";
-	echo "                                                        ";
+    if [[ $(tput cols) -lt 123 ]]
+	then
+		echo "______    ________            ______              ______         ";
+		echo "___  /______  /_( )_______    ___  /_______ _________  /__       ";
+		echo "__  /_  _ \  __/|/__  ___/    __  __ \  __ \`/  ___/_  //_/       ";
+		echo "_  / /  __/ /_    _(__  )     _  / / / /_/ // /__ _  ,<_________ ";
+		echo "/_/  \___/\__/    /____/      /_/ /_/\__,_/ \___/ /_/|_|(_)(_)(_)";
+		echo "                                                                 ";
+		echo "                                                                 ";
+	else
+		echo " █     █░▓█████     ██░ ██  ▄▄▄    ██▒   █▓▓█████    ▄▄▄█████▓ ▒█████      ██░ ██  ▄▄▄       ▄████▄   ██ ▄█▀               ";
+		echo "▓█░ █ ░█░▓█   ▀    ▓██░ ██▒▒████▄ ▓██░   █▒▓█   ▀    ▓  ██▒ ▓▒▒██▒  ██▒   ▓██░ ██▒▒████▄    ▒██▀ ▀█   ██▄█▒                ";
+		echo "▒█░ █ ░█ ▒███      ▒██▀▀██░▒██  ▀█▄▓██  █▒░▒███      ▒ ▓██░ ▒░▒██░  ██▒   ▒██▀▀██░▒██  ▀█▄  ▒▓█    ▄ ▓███▄░                ";
+		echo "░█░ █ ░█ ▒▓█  ▄    ░▓█ ░██ ░██▄▄▄▄██▒██ █░░▒▓█  ▄    ░ ▓██▓ ░ ▒██   ██░   ░▓█ ░██ ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄                ";
+		echo "░░██▒██▓ ░▒████▒   ░▓█▒░██▓ ▓█   ▓██▒▒▀█░  ░▒████▒     ▒██▒ ░ ░ ████▓▒░   ░▓█▒░██▓ ▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄ ██▓  ██▓  ██▓ ";
+		echo "░ ▓░▒ ▒  ░░ ▒░ ░    ▒ ░░▒░▒ ▒▒   ▓▒█░░ ▐░  ░░ ▒░ ░     ▒ ░░   ░ ▒░▒░▒░     ▒ ░░▒░▒ ▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒ ▒▓▒  ▒▓▒  ▒▓▒ ";
+		echo "  ▒ ░ ░   ░ ░  ░    ▒ ░▒░ ░  ▒   ▒▒ ░░ ░░   ░ ░  ░       ░      ░ ▒ ▒░     ▒ ░▒░ ░  ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░ ░▒   ░▒   ░▒  ";
+		echo "  ░   ░     ░       ░  ░░ ░  ░   ▒     ░░     ░        ░      ░ ░ ░ ▒      ░  ░░ ░  ░   ▒   ░        ░ ░░ ░  ░    ░    ░   ";
+		echo "    ░       ░  ░    ░  ░  ░      ░  ░   ░     ░  ░                ░ ░      ░  ░  ░      ░  ░░ ░      ░  ░     ░    ░    ░  ";
+		echo "                                       ░                                                    ░                 ░    ░    ░  ";
+		echo "                                                                                                                           ";
+		echo "                                                                                                                           ";
+	fi
 else
-	echo "                                                                                                           ";
-	echo "                        ,dPYb,                 ,dPYb,                                       8I             ";
-	echo "                        IP'\`Yb                 IP'\`Yb                                       8I             ";
-	echo "                        I8  8I  gg             I8  8I                                       8I             ";
-	echo "                        I8  8'  \"\"             I8  8'                                       8I             ";
-	echo " gg     gg    ,gggg,gg  I8 dP   gg     ,g,     I8 dPgg,     ,gggg,gg   ,ggg,,ggg,     ,gggg,8I    ,gggg,gg ";
-	echo " I8     8I   dP\"  \"Y8I  I8dP    88    ,8'8,    I8dP\" \"8I   dP\"  \"Y8I  ,8\" \"8P\" \"8,   dP\"  \"Y8I   dP\"  \"Y8I ";
-	echo " I8,   ,8I  i8'    ,8I  I8P     88   ,8'  Yb   I8P    I8  i8'    ,8I  I8   8I   8I  i8'    ,8I  i8'    ,8I ";
-	echo ",d8b, ,d8I ,d8,   ,d8b,,d8b,_ _,88,_,8'_   8) ,d8     I8,,d8,   ,d8b,,dP   8I   Yb,,d8,   ,d8b,,d8,   ,d8b,";
-	echo "P\"\"Y88P\"888P\"Y8888P\"\`Y88P'\"Y888P\"\"Y8P' \"YY8P8P88P     \`Y8P\"Y8888P\"\`Y88P'   8I   \`Y8P\"Y8888P\"\`Y8P\"Y8888P\"\`Y8";
-	echo "      ,d8I'                                                                                                ";
-	echo "    ,dP'8I                                                                                                 ";
-	echo "   ,8\"  8I                                                                                                 ";
-	echo "   I8   8I                                                                                                 ";
-	echo "   \`8, ,8I                                                                                                 ";
-	echo "    \`Y8P\"                                                                                                  ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
-	echo "                                                                                                           ";
+    if [[ $(tput cols) -lt 107 ]]
+	then
+		echo "              __ __       __                   __       ";
+		echo " .--.--.---.-|  |__.-----|  |--.---.-.-----.--|  .---.-.";
+		echo " |  |  |  _  |  |  |__ --|     |  _  |     |  _  |  _  |";
+		echo " |___  |___._|__|__|_____|__|__|___._|__|__|_____|___._|";
+		echo " |_____|                                                ";
+		echo "                                                        ";
+		echo "                                                        ";
+		echo "                                                        ";
+	else
+		echo "                                                                                                           ";
+		echo "                        ,dPYb,                 ,dPYb,                                       8I             ";
+		echo "                        IP'\`Yb                 IP'\`Yb                                       8I             ";
+		echo "                        I8  8I  gg             I8  8I                                       8I             ";
+		echo "                        I8  8'  \"\"             I8  8'                                       8I             ";
+		echo " gg     gg    ,gggg,gg  I8 dP   gg     ,g,     I8 dPgg,     ,gggg,gg   ,ggg,,ggg,     ,gggg,8I    ,gggg,gg ";
+		echo " I8     8I   dP\"  \"Y8I  I8dP    88    ,8'8,    I8dP\" \"8I   dP\"  \"Y8I  ,8\" \"8P\" \"8,   dP\"  \"Y8I   dP\"  \"Y8I ";
+		echo " I8,   ,8I  i8'    ,8I  I8P     88   ,8'  Yb   I8P    I8  i8'    ,8I  I8   8I   8I  i8'    ,8I  i8'    ,8I ";
+		echo ",d8b, ,d8I ,d8,   ,d8b,,d8b,_ _,88,_,8'_   8) ,d8     I8,,d8,   ,d8b,,dP   8I   Yb,,d8,   ,d8b,,d8,   ,d8b,";
+		echo "P\"\"Y88P\"888P\"Y8888P\"\`Y88P'\"Y888P\"\"Y8P' \"YY8P8P88P     \`Y8P\"Y8888P\"\`Y88P'   8I   \`Y8P\"Y8888P\"\`Y8P\"Y8888P\"\`Y8";
+		echo "      ,d8I'                                                                                                ";
+		echo "    ,dP'8I                                                                                                 ";
+		echo "   ,8\"  8I                                                                                                 ";
+		echo "   I8   8I                                                                                                 ";
+		echo "   \`8, ,8I                                                                                                 ";
+		echo "    \`Y8P\"                                                                                                  ";
+		echo "                                                                                                           ";
+		echo "                                                                                                           ";
+	fi
 fi
