@@ -128,7 +128,19 @@ alias dalivali='printf '\''\e[8;50;140t'\'' && curl -4 http://wttr.in/sofia'
 
 
 # ASCII art startup
-if (( $(id -u) == 0 ))
+# =================
+# 
+# First, determine whether we have `lolcat` installed
+if which lolcat 2>&1 > /dev/null
+then
+    __startup_print_command="lolcat"
+else
+    __startup_print_command="cat"
+fi
+
+# Then, print the correct thing, according to the screen width and user (root or normal)
+${__startup_print_command} < <(
+if [ $(id -u) = 0 ]
 then
     if [[ $(tput cols) -lt 123 ]]
 	then
@@ -138,7 +150,7 @@ then
 		echo "_  / /  __/ /_    _(__  )     _  / / / /_/ // /__ _  ,<_________ ";
 		echo "/_/  \___/\__/    /____/      /_/ /_/\__,_/ \___/ /_/|_|(_)(_)(_)";
 		echo "                                                                 ";
-		echo "                                                                 ";
+        echo "                                                                 "; 
 	else
 		echo " █     █░▓█████     ██░ ██  ▄▄▄    ██▒   █▓▓█████    ▄▄▄█████▓ ▒█████      ██░ ██  ▄▄▄       ▄████▄   ██ ▄█▀               ";
 		echo "▓█░ █ ░█░▓█   ▀    ▓██░ ██▒▒████▄ ▓██░   █▒▓█   ▀    ▓  ██▒ ▓▒▒██▒  ██▒   ▓██░ ██▒▒████▄    ▒██▀ ▀█   ██▄█▒                ";
@@ -151,7 +163,7 @@ then
 		echo "    ░       ░  ░    ░  ░  ░      ░  ░   ░     ░  ░                ░ ░      ░  ░  ░      ░  ░░ ░      ░  ░     ░    ░    ░  ";
 		echo "                                       ░                                                    ░                 ░    ░    ░  ";
 		echo "                                                                                                                           ";
-		echo "                                                                                                                           ";
+        echo "                                                                                                                           ";
 	fi
 else
     if [[ $(tput cols) -lt 107 ]]
@@ -163,7 +175,7 @@ else
 		echo " |_____|                                                ";
 		echo "                                                        ";
 		echo "                                                        ";
-		echo "                                                        ";
+        echo "                                                        ";
 	else
 		echo "                                                                                                           ";
 		echo "                        ,dPYb,                 ,dPYb,                                       8I             ";
@@ -182,6 +194,9 @@ else
 		echo "   \`8, ,8I                                                                                                 ";
 		echo "    \`Y8P\"                                                                                                  ";
 		echo "                                                                                                           ";
-		echo "                                                                                                           ";
+        echo "                                                                                                           ";
 	fi
 fi
+)
+
+unset __startup_print_command
