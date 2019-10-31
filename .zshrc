@@ -125,7 +125,9 @@ alias gri="git rebase --interactive"
 alias gg="gloga" # git log --all --graph --oneline --color
 alias gpl="git pull"
 alias dalivali='printf '\''\e[8;50;140t'\'' && curl -4 http://wttr.in/sofia'
-
+alias lunataspi="curl http://wttr.in/Moon"
+alias kostanasbitkoina='printf '\''\e[8;50;95t'\'' && curl rate.sx'
+alias myip="curl icanhazip.com"
 
 # ASCII art startup
 # =================
