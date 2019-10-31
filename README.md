@@ -10,7 +10,7 @@ Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
 - [Spaceship Theme](https://github.com/denysdovhan/spaceship-prompt)
 - [Fish-like Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
-2. Install (Powerline || Fira Code) fonts:
+2. Install (Fira Code || Powerline) fonts:
 - [FIRA CODE](https://github.com/tonsky/FiraCode)
 - [Powerline Fonts](https://github.com/powerline/fonts/tree/master/SourceCodePro)
 
@@ -24,3 +24,7 @@ git clone https://github.com/allexks/dotfiles
 cp dotfiles/.* ~
 sudo ln -s ~/.zshrc ~root/.zshrc  # only if you wanna change root shell as well
 ```
+## Collection of unnecessary but cool stuff
+- [lolcat](https://github.com/busyloop/lolcat)
+- [tldr](https://github.com/tldr-pages/tldr)
+- [cheat](https://github.com/cheat/cheat)
