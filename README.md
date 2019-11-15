@@ -28,3 +28,5 @@ sudo ln -s ~/.zshrc ~root/.zshrc  # only if you wanna change root shell as well
 - [lolcat](https://github.com/busyloop/lolcat)
 - [tldr](https://github.com/tldr-pages/tldr)
 - [cheat](https://github.com/cheat/cheat)
+- [youtube-dl](https://github.com/ytdl-org/youtube-dl)
+- [ytmdl](https://github.com/deepjyoti30/ytmdl)
