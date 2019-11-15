@@ -106,6 +106,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+export VISUAL="vim"
+export EDITOR="vim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -129,6 +131,12 @@ alias dalivali='printf '\''\e[8;50;140t'\'' && curl -4 http://wttr.in/sofia'
 alias lunataspi="curl http://wttr.in/Moon"
 alias kostanasbitkoina='printf '\''\e[8;50;95t'\'' && curl rate.sx'
 alias myip="curl icanhazip.com"
+
+if which kinfocenter
+then
+    # KDE-Plasma
+    alias open="kde-open5"
+fi
 
 # ASCII art startup
 # =================
