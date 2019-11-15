@@ -131,8 +131,9 @@ alias dalivali='printf '\''\e[8;50;140t'\'' && curl -4 http://wttr.in/sofia'
 alias lunataspi="curl http://wttr.in/Moon"
 alias kostanasbitkoina='printf '\''\e[8;50;95t'\'' && curl rate.sx'
 alias myip="curl icanhazip.com"
+alias flex="clear && src"
 
-if which kinfocenter
+if which kinfocenter 2>&1 > /dev/null
 then
     # KDE-Plasma
     alias open="kde-open5"
