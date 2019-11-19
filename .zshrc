@@ -133,6 +133,7 @@ alias lunataspi="curl http://wttr.in/Moon"
 alias kostanasbitkoina='printf '\''\e[8;50;95t'\'' && curl rate.sx'
 alias myip="curl icanhazip.com"
 alias hahaa="clear && src"
+alias pls="sudo"
 
 if which kinfocenter 2>&1 > /dev/null
 then
