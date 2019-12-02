@@ -127,6 +127,7 @@ alias py2="python"
 alias gri="git rebase --interactive"
 alias gg="gloga" # git log --all --graph --oneline --color
 alias gpl="git pull"
+alias currbr="git branch | grep '*' | cut -f2 -d ' '"
 alias v="vim"
 alias dalivali='printf '\''\e[8;50;140t'\'' && curl -4 http://wttr.in/sofia'
 alias lunataspi="curl http://wttr.in/Moon"
