@@ -137,10 +137,10 @@ alias pls="sudo"
 alias letshack="sudo su"
 alias hack="sudo su"
 
-if which kinfocenter 2>&1 > /dev/null
+if which xdg-open 2>&1 > /dev/null
 then
-    # KDE-Plasma
-    alias open="kde-open5"
+    # Manjaro
+    alias open="xdg-open"
 fi
 
 # ASCII art startup
