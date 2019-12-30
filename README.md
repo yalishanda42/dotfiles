@@ -30,3 +30,4 @@ sudo ln -s ~/.zshrc ~root/.zshrc  # only if you wanna change root shell as well
 - [cheat](https://github.com/cheat/cheat)
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - [ytmdl](https://github.com/deepjyoti30/ytmdl)
+- [yet-another-spotify-lyrics](https://github.com/goktug97/yet-another-spotify-lyrics)
