@@ -144,9 +144,56 @@ then
     alias open="xdg-open"
 fi
 
+# cd + ls
+cl() {
+	local dir="$1"
+	local dir="${dir:=$HOME}"
+	if [[ -d "$dir" ]]; then
+		cd "$dir" >/dev/null; ls
+	else
+		echo "bash: cl: $dir: Directory not found"
+	fi
+}
+
+# extract <file1> <file2> ...
+extract() {
+    local c e i
+
+    (($#)) || return
+
+    for i; do
+        c=''
+        e=1
+
+        if [[ ! -r $i ]]; then
+            echo "$0: file is unreadable: \`$i'" >&2
+            continue
+        fi
+
+        case $i in
+            *.t@(gz|lz|xz|b@(2|z?(2))|a@(z|r?(.@(Z|bz?(2)|gz|lzma|xz)))))
+                   c=(bsdtar xvf);;
+            *.7z)  c=(7z x);;
+            *.Z)   c=(uncompress);;
+            *.bz2) c=(bunzip2);;
+            *.exe) c=(cabextract);;
+            *.gz)  c=(gunzip);;
+            *.rar) c=(unrar x);;
+            *.xz)  c=(unxz);;
+            *.zip) c=(unzip);;
+            *)     echo "$0: unrecognized file extension: \`$i'" >&2
+                   continue;;
+        esac
+
+        command "${c[@]}" "$i"
+        ((e = e || $?))
+    done
+    return "$e"
+}
+
 # ASCII art startup
 # =================
-# 
+#
 # First, determine whether we have `lolcat` installed
 if which lolcat 2>&1 > /dev/null
 then
@@ -161,7 +208,7 @@ if [ $(id -u) = 0 ]
 then
     if [[ $(tput cols) -lt 123 ]]
 	then
-        echo "                                                                 "; 
+        echo "                                                                 ";
 		echo "______    ________            ______              ______         ";
 		echo "___  /______  /_( )_______    ___  /_______ _________  /__       ";
 		echo "__  /_  _ \  __/|/__  ___/    __  __ \  __ \`/  ___/_  //_/       ";
