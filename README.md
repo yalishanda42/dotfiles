@@ -18,10 +18,13 @@ Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
 - For normal user: `chsh -s /bin/zsh`
 - For root: `sudo chsh -s /bin/zsh`
 
-4. Use the repo:
+4. Install Atom's One Dark theme for Vim:
+- [Instructions](https://github.com/joshdick/onedark.vim)
+
+5. Use the repo:
 - Run the install script:
 `./INSTALL.sh`
-- If there is an update available, easily update with:
+- Then, at any time, if there is an update available, easily update with:
 `./UPDATE.sh`
 
 ## Collection of unnecessary but cool stuff
