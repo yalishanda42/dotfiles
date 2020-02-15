@@ -155,6 +155,12 @@ cl() {
 	fi
 }
 
+# mkdir + cl
+mkcl() {
+    mkdir $1
+    cl $1   
+}
+
 # extract <file1> <file2> ...
 extract() {
     local c e i
