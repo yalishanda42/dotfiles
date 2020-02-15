@@ -1,7 +1,12 @@
 # Yalishanda's .files
 
-## Why?
-Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
+## Result
+![1](screenshots/1.png)
+![2](screenshots/2.png)
+![3](screenshots/3.png)
+![4](screenshots/4.png)
+![5](screenshots/5.png)
+![6](screenshots/6.png)
 
 ## What does it use?
 - [Oh-My-Zsh!](https://github.com/robbyrussell/oh-my-zsh)
