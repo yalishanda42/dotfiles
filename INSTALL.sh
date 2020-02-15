@@ -7,20 +7,21 @@ function fail() {
 
 echo ℹ️ Install directory is $(echo ~)
 
-echo ➡️ Downloading and installing Oh-My-Zsh! ...
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo ➡️  Downloading and installing Oh-My-Zsh! ...
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" < <(echo exit) || fail
+source ~/.zshrc
 
-echo ➡️ Downloading Synthax Highlighting plugin...
+echo ➡️  Downloading Synthax Highlighting plugin...
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting || fail
 
-echo ➡️ Downloading Spaceship theme...
+echo ➡️  Downloading Spaceship theme...
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" || fail
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" || fail
 
-echo ➡️ Downloading Autocompletion plugin...
+echo ➡️  Downloading Autocompletion plugin...
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions || fail
 
-echo ➡️ Copying .zshrc to install directory...
+echo ➡️  Copying .zshrc to install directory...
 cat .zshrc | sed 's#/home/yalishanda#'$(echo ~)'#g' > ~/.zshrc || fail
 echo ✅ Terminal setup ready.
 
@@ -36,7 +37,7 @@ read -p "Do you wish to install Atom's One Dark theme for Vim? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    echo ➡️ Downloading colorsheme...
+    echo ➡️  Downloading colorsheme...
     if [[ ! -d ~/.vim/colors ]]
     then
         mkdir -p ~/.vim/colors || fail
@@ -53,7 +54,8 @@ then
     fi
     cd ~/.vim/pack/onedark/opt || fail
     git clone https://github.com/joshdick/onedark.vim || fail
-    ➡️ Copying .vimrc to install directory...
+    cd -
+    echo ➡️ Copying .vimrc to install directory...
     cp .vimrc ~ || fail
 else
     echo ➡️ OK, just putting a default .vimrc to install directory...
@@ -61,4 +63,7 @@ else
 fi
 echo ✅ Vim setup ready.
 echo
-echo 🍻 Enjoy your fresh terminal! 🍻 && exit 0
+echo 🍻 Enjoy your fresh terminal! 🍻 
+
+zsh
+exit 0
