@@ -21,7 +21,7 @@ Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
 
 3. Abra-cadabra!
 - Run the install script:
-`./INSTALL.sh` (*WARNING*: This overwrites your `~/.zshrc` content and assumes you haven't installed Oh-My-Zsh! yet. If you have, please remove the folder.)
+`./INSTALL.sh` (**WARNING**: This overwrites your `~/.zshrc` content and assumes you haven't installed *Oh-My-Zsh!* yet. If you have, please remove the folder.)
 - Then, at any time, if there is an update available, easily update with:
 `./UPDATE.sh`
 
