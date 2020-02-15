@@ -21,7 +21,10 @@ Because I am a try-hard and want an easy-peasy-hacky setup on every machine.
 4. Install Atom's One Dark theme for Vim:
 - [Instructions](https://github.com/joshdick/onedark.vim)
 
-5. Use the repo:
+5. (Optional) Download and install Kite
+- [Website](https://kite.com/)
+
+6. Use the repo:
 - Run the install script:
 `./INSTALL.sh`
 - Then, at any time, if there is an update available, easily update with:
