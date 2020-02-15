@@ -25,7 +25,7 @@ echo ➡️  Copying .zshrc to install directory...
 cat .zshrc | sed 's#/home/yalishanda#'$(echo ~)'#g' > ~/.zshrc || fail
 echo ✅ Terminal setup ready.
 
-read -p "Do you wish to install for root user as well? [y/n]" -n 1 -r
+read -p "❓ Do you wish to install for root user as well? [y/n]: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -33,7 +33,7 @@ then
     echo ✅ Root setup ready.
 fi
 
-read -p "Do you wish to install Atom's One Dark theme for Vim? [y/n]" -n 1 -r
+read -p "❓ Do you wish to install Atom's One Dark theme for Vim? [y/n]: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -63,7 +63,6 @@ else
 fi
 echo ✅ Vim setup ready.
 echo
-echo 🍻 Enjoy your fresh terminal! 🍻 
-
+echo 🍻 Enjoy your fresh terminal! 🍻
 zsh
 exit 0
