@@ -2,4 +2,4 @@
 
 git pull
 
-./INSTALL.sh < <(echo n)
+./INSTALL.sh < <(echo nn)
