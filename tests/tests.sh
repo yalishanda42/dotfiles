@@ -5,7 +5,7 @@ function cleanup() {
     rm -rf ~/.vimrc
 }
 
-# cleanup
+cleanup
 
 echo Installing without sudo and without vim plugins...
 ../INSTALL.sh < <(echo nn) || exit 1
