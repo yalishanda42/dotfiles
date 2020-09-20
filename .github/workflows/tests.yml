@@ -21,8 +21,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      # Install zsh
+      - name: Install ZSH
+        run: |
+          wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
+          mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
+          cd zsh
+          ./configure --prefix=$HOME
+          make
+          make install
 
-      # Runs a single command using the runners shell
+      # Runs tests
       - name: Run tests
         run: |
           ./tests.sh
