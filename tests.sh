@@ -7,19 +7,22 @@ function cleanup() {
 
 cleanup
 
-echo Installing without sudo and without vim plugins...
+echo ==========================================================
+echo TEST 1: Installing without sudo and without vim plugins...
+echo ==========================================================
 ./INSTALL.sh < <(echo nn) || exit 1
 
 cleanup
 
-echo Installing without sudo and wit vim plugins...
+echo ==========================================================
+echo TEST 2: Installing without sudo and wit vim plugins...
+echo ==========================================================
 ./INSTALL.sh < <(echo ny) || exit 1
-
-cleanup
-
-echo Updating...
-./UPDATE.sh || exit 1
-
+#
+# echo ==========================================================
+# echo TEST 3: Updating...
+# echo ==========================================================
+# ./UPDATE.sh || exit 1
 
 echo All tests OK
 exit 0
