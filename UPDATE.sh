@@ -1,5 +1,3 @@
 #!/bin/bash
 
-git pull
-
-./INSTALL.sh < <(echo nn)
+git pull && ./INSTALL.sh < <(echo nn)
