@@ -16,4 +16,4 @@ function current_branch () {
 	echo ${ref#refs/heads/}
 }
 
-git pull --rebase origin current_branch && rm -rf ~/.oh-my-zsh && ./INSTALL.sh < <(echo nn)
+git pull --rebase origin $(current_branch) && rm -rf ~/.oh-my-zsh && ./INSTALL.sh < <(echo nn)
