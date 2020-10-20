@@ -40,6 +40,8 @@
 ## Collection of unnecessary but cool stuff
 - [lolcat](https://github.com/busyloop/lolcat)
 - [tldr](https://github.com/tldr-pages/tldr)
+- [swiftenv](https://github.com/kylef/swiftenv)
+- [xcenv](https://github.com/xcenv/xcenv)
 - [cheat](https://github.com/cheat/cheat)
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl)
 - [ytmdl](https://github.com/deepjyoti30/ytmdl)

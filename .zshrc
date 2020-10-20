@@ -197,6 +197,17 @@ extract() {
     return "$e"
 }
 
+# swiftenv and xcenv setup
+if which swiftenv 2>&1 > /dev/null
+then
+	eval "$(swiftenv init -)"
+fi
+
+if which xcenv 2>&1 > /dev/null
+then
+	eval "$(xcenv init -)"
+fi
+
 # ASCII art startup
 # =================
 #
