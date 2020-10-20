@@ -32,6 +32,7 @@
   "Default Bookmark" : "No",
   "Non-ASCII Anti Aliased" : true,
   "Use Bright Bold" : true,
+  "Show Mark Indicators" : false,
   "Ansi 10 Color" : {
     "Green Component" : 1,
     "Blue Component" : 0.3333333432674408,
