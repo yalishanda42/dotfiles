@@ -30,6 +30,13 @@
 - Then, at any time, if there is an update available, easily update with:
 `./UPDATE.sh`
 
+## My color preferences
+- Foreground: #1ABC9C
+- Background: #000000 69% alpha
+- Cursor: #7F51E4 67% alpha
+- Bold Foreground: #1ADC9C
+- Selection: #0900E9 65% alpha
+
 ## Collection of unnecessary but cool stuff
 - [lolcat](https://github.com/busyloop/lolcat)
 - [tldr](https://github.com/tldr-pages/tldr)
