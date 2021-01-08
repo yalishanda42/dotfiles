@@ -80,6 +80,13 @@ plugins=(
 	zsh_reload
 	web-search
 	zsh-autosuggestions
+	xcode
+	thefuck
+	swiftpm
+	pod
+	gitignore
+	django
+	battery
 )
 
 if (( $(id -u) == 0 ))
@@ -158,7 +165,7 @@ cl() {
 # mkdir + cl
 mkcl() {
     mkdir $1
-    cl $1   
+    cl $1
 }
 
 # extract <file1> <file2> ...
