@@ -48,3 +48,6 @@
 - [yet-another-spotify-lyrics](https://github.com/goktug97/yet-another-spotify-lyrics)
 - [SwagLyrics](https://github.com/SwagLyrics/SwagLyrics-For-Spotify)
 - [glow (markdown reader)](https://github.com/charmbracelet/glow)
+
+## Bigger collection of cool stuff:
+- [click me](https://github.com/agarrharr/awesome-cli-apps)
