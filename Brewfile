@@ -50,6 +50,7 @@ brew "lolcat"
 brew "lynx"
 brew "protobuf"
 brew "mysql", restart_service: true
+brew "ncdu"
 brew "netcat"
 brew "nim"
 brew "nmap"
