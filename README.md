@@ -16,8 +16,8 @@
 - [Atom's One Dark Theme proxy for Vim](https://github.com/joshdick/onedark.vim)
 
 ## What do I need to do if I don't have any of these and want them installed automagically?
-1. Install (Fira Code || Powerline) fonts and make the terminal use one of them:
-- [FIRA CODE](https://github.com/tonsky/FiraCode)
+1. Install (Fira Code || Powerline || Nerd Font) fonts and make the terminal use one of them:
+- [FIRA CODE Nerd Font](https://www.nerdfonts.com/font-downloads)
 - [Powerline Fonts](https://github.com/powerline/fonts/tree/master/SourceCodePro)
 
 2. Make sure `zsh` is the default shell:
