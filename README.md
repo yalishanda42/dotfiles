@@ -37,6 +37,10 @@
 - Bold Foreground: #1ADC9C
 - Selection: #0900E9 65% alpha
 
+## One Dark Theme for XCode
+
+Copy the `FontAndColorThemes` dir into `~/Library/Developer/Xcode/UserData`.
+
 ## Collection of unnecessary but cool stuff
 - [lolcat](https://github.com/busyloop/lolcat)
 - [ncdu](https://dev.yorhel.nl/ncdu)
