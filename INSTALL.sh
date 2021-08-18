@@ -63,6 +63,6 @@ else
 fi
 echo ✅ Vim setup ready.
 echo
-echo 🍻 Enjoy your fresh terminal! 🍻
-zsh
+echo 🍻 Enjoy your fresh new zsh terminal! 🍻
+
 exit 0
