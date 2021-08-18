@@ -15,7 +15,7 @@ echo ==========================================================
 cleanup
 
 echo ==========================================================
-echo TEST 2: Installing without sudo and wit vim plugins...
+echo TEST 2: Installing without sudo and with vim plugins...
 echo ==========================================================
 ./INSTALL.sh < <(echo ny) || exit 1
 #
