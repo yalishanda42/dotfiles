@@ -20,9 +20,14 @@ echo ==========================================================
 ./INSTALL.sh < <(echo ny) || exit 1
 
 echo ==========================================================
-echo TEST 3: Updating...
+echo TEST 3: Updating all without vim plugins...
 echo ==========================================================
-./UPDATE.sh || exit 1
+./UPDATE.sh < <(echo n) || exit 1
+
+echo ==========================================================
+echo TEST 3: Updating all...
+echo ==========================================================
+./UPDATE.sh < <(echo y) || exit 1
 
 echo All tests OK
 exit 0
