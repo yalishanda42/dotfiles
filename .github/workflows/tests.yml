@@ -7,12 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    strategy:
-      matrix: 
-        os: [macos-latest, ubuntu-latest]
-    
-    runs-on: ${{ matrix.os }}
+  test-macos:
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -20,3 +16,22 @@ jobs:
       - name: Run tests
         run: |
           ./tests.sh
+          
+      - name: Install from Brewfile
+        run: |
+          brew bundle
+          
+  test-ubuntu:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Install zsh
+        run: |
+          sudo apt install zsh
+      
+      - name: Run tests
+        run: |
+          ./tests.sh
+      
