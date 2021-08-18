@@ -1,12 +1,15 @@
 # Yalishanda's .files
 
+[![Tests](https://github.com/allexks/dotfiles/actions/workflows/tests.yml/badge.svg)](https://github.com/allexks/dotfiles/actions/workflows/tests.yml)
+
+| ![1](screenshots/1.png) | ![2](screenshots/2.png) |
+|---------|-------------|
+| ![3](screenshots/3.png) | ![4](screenshots/4.png) |
+| ![5](screenshots/5.png) | ![6](screenshots/6.png) |
+
 ## Result
-![1](screenshots/1.png)
-![2](screenshots/2.png)
-![3](screenshots/3.png)
-![4](screenshots/4.png)
-![5](screenshots/5.png)
-![6](screenshots/6.png)
+
+
 
 ## What does it use?
 - [Oh-My-Zsh!](https://github.com/robbyrussell/oh-my-zsh)
@@ -31,11 +34,8 @@
 `./UPDATE.sh`
 
 ## My color preferences
-- Foreground: #1ABC9C
-- Background: #000000 69% alpha
-- Cursor: #7F51E4 67% alpha
-- Bold Foreground: #1ADC9C
-- Selection: #0900E9 65% alpha
+
+[iTerm2DropdownProfile.json](iTerm2DropdownProfile.json) and [iTerm2Profile.json](Term2Profile.json) can be easily imported into [iTerm2](https://iterm2.com/).
 
 ## One Dark Theme for XCode
 
