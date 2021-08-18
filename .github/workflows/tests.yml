@@ -17,9 +17,9 @@ jobs:
         run: |
           ./tests.sh
           
-      - name: Install from Brewfile
-        run: |
-          brew bundle
+#       - name: Install from Brewfile
+#         run: |
+#           brew bundle
           
   test-ubuntu:
     runs-on: ubuntu-latest
