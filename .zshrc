@@ -85,7 +85,6 @@ plugins=(
 	swiftpm
 	pod
 	gitignore
-	django
 	battery
 )
 
