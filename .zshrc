@@ -77,7 +77,6 @@ plugins=(
 	colorize
 	pod
 	themes
-	zsh_reload
 	web-search
 	zsh-autosuggestions
 	xcode
