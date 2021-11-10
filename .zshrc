@@ -73,7 +73,7 @@ ZSH_THEME="spaceship"
 plugins=(
 	git
 	zsh-syntax-highlighting
-	osx
+	macos
 	colorize
 	pod
 	themes
