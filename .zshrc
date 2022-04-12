@@ -145,6 +145,7 @@ alias kostanasbitkoina='printf '\''\e[8;50;95t'\'' && curl rate.sx'
 alias myip="curl icanhazip.com"
 alias hahaa="clear && source ~/.zshrc"
 alias pls="sudo"
+alias sudo="echo Your wish is my command.; sudo"
 alias letshack="sudo su"
 alias hack="sudo su"
 
