@@ -208,6 +208,28 @@ extract() {
     return "$e"
 }
 
+# work git related
+
+# Prepends the JIRA ticket ID to the parameter of the `git commit -m` command.
+#
+# Usage:
+#		$ gcms "Example commit message"
+# Equivalent to:
+#		$ git commit -m "SI-12345: Example commit message"
+#
+# Note: The above example assumes that the current branch's name includes SI_12345
+function gcms {
+	local name
+	name=$(currbr | egrep -o "[A-Z]+_[0-9]+" | sed 's/_/-/g')
+
+	if [ ! -z "$name" ]
+	then
+		git commit -m "$name: $1"
+	else
+		echo "Sorry bro, couldn't get the ticket ID out of the branch's name.\nTry typing it manually this time :/" 1>&2
+	fi
+}
+
 # swiftenv and xcenv setup
 if which swiftenv 2>&1 > /dev/null
 then
