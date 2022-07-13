@@ -208,7 +208,14 @@ extract() {
     return "$e"
 }
 
-# work git related
+# === more git ===
+# Usage: gcmm Example commit message
+# Equivalent to: git commit -m "Example commit message"
+function gcmm {
+	git commit -m "$*"
+}
+
+# === work git related ===
 
 # Prepends the JIRA ticket ID to the parameter of the `git commit -m` command.
 #
