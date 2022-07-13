@@ -213,7 +213,7 @@ extract() {
 # Prepends the JIRA ticket ID to the parameter of the `git commit -m` command.
 #
 # Usage:
-#		$ gcms "Example commit message"
+#		$ gcms Example commit message
 # Equivalent to:
 #		$ git commit -m "SI-12345: Example commit message"
 #
@@ -224,7 +224,7 @@ function gcms {
 
 	if [ ! -z "$name" ]
 	then
-		git commit -m "$name: $1"
+		git commit -m "$name: $*"
 	else
 		echo "Sorry bro, couldn't get the ticket ID out of the branch's name.\nTry typing it manually this time :/" 1>&2
 	fi
