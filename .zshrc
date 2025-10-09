@@ -135,6 +135,7 @@ alias q="exit"
 alias py="python3"
 alias py2="python"
 alias uvp="uv run python"
+alias uvr="uv run"
 alias gri="git rebase --interactive"
 alias gg="gloga" # git log --all --graph --oneline --color
 alias gpl="git pull"
